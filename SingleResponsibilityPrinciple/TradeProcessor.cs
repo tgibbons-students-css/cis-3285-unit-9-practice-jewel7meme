@@ -70,7 +70,7 @@ namespace SingleResponsibilityPrinciple
 
             if (tradeAmount > 100000 || tradeAmount < 1000)
             {
-                LogMessage("WARN: Trade amount on line {0} outside trade amount bounds : '{1}'", currentLine, fields[1]);
+                LogMessage("WARN: Trade amount on line {0} outside trade amount bounds (Trade amounts must be between 1,000 and 100,000 units.): '{1}'", currentLine, fields[1]);
                 return false;
             }
             decimal tradePrice;
