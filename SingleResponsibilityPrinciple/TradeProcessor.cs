@@ -82,13 +82,14 @@ namespace SingleResponsibilityPrinciple
 
             return true;
         }
-
+        //<log><type>INFO</type><message>4 trades processed</message></log> 
         private void LogMessage(string message, params object[] args)
         {
+            string type = message.Substring(0, 4);
             Console.WriteLine(message, args);
             using (StreamWriter logfile = File.AppendText("log.xml"))
             {
-                logfile.WriteLine(" " + message + " ", args);
+                logfile.WriteLine("<log><type>"+type+"</type><message>" + message + "</message></log>", args);
             }
 
         }
